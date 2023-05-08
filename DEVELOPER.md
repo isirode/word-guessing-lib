@@ -18,6 +18,17 @@ Or
 
 > yarn build
 
+## Features
+
+- [x] Words
+
+- [ ] Expressions
+  - The difficulty is to accept alternatives, syntax errors etc
+
+- [ ] Citations
+
+- [ ] Anagrams
+
 ## TODO
 
 - Put back "module": "dist/index.js" in the parcel configuration (somehow)
