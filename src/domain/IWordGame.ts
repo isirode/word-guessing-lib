@@ -1,4 +1,10 @@
 import { GuessResult } from "./models/GuessResult";
+import { SupportedLanguages } from "./models/WordGameOptions";
+
+export interface Sequence {
+  language: SupportedLanguages;
+  stringSequence: string;
+}
 
 export interface IWordGame {
   getNewSequence(): string;
@@ -6,7 +12,8 @@ export interface IWordGame {
   getExampleForSequence(): string;
   remainingAttempts(): number;
   reset(): void;
-  currentSequence: string;
+  overrideLanguage: SupportedLanguages | undefined;
+  currentSequence: Sequence;
   isGuessing: boolean;
   attempts: number;
 }

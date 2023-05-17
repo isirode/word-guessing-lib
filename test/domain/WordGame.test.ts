@@ -16,12 +16,14 @@ describe('WordGame', () => {
       when(mockedWordDatabase.getSequence(minOccurences, maxOccurences)).thenReturn(expectedSequence);
 
       let wordDatabase: IWordDatabase = instance(mockedWordDatabase);
+      let englishWordDatabase: IWordDatabase = instance(mockedWordDatabase);
 
-      let wordGame = new WordGame(wordDatabase, {
+      let wordGame = new WordGame(wordDatabase, englishWordDatabase, {
         minOccurences: minOccurences,
         maxOccurences: maxOccurences,
         guessAsSession: false,
         maxAttempts: -1,
+        language: "fra"
       });
 
       // when
@@ -29,7 +31,7 @@ describe('WordGame', () => {
 
       // then
       expect(sequence).toBe(expectedSequence);
-      expect(wordGame.currentSequence).toBe(expectedSequence);
+      expect(wordGame.currentSequence.stringSequence).toBe(expectedSequence);
     });
 
     it('should indicate that the game is in play if the option guessAsSession is true', () => {
@@ -43,12 +45,14 @@ describe('WordGame', () => {
       when(mockedWordDatabase.getSequence(minOccurences, maxOccurences)).thenReturn(expectedSequence);
 
       let wordDatabase: IWordDatabase = instance(mockedWordDatabase);
+      let englishWordDatabase: IWordDatabase = instance(mockedWordDatabase);
 
-      let wordGame = new WordGame(wordDatabase, {
+      let wordGame = new WordGame(wordDatabase, englishWordDatabase, {
         minOccurences: minOccurences,
         maxOccurences: maxOccurences,
         guessAsSession: guessAsSession,
         maxAttempts: -1,
+        language: "fra"
       });
 
       // when
@@ -70,12 +74,14 @@ describe('WordGame', () => {
       when(mockedWordDatabase.getSequence(minOccurences, maxOccurences)).thenReturn(expectedSequence);
 
       let wordDatabase: IWordDatabase = instance(mockedWordDatabase);
+      let englishWordDatabase: IWordDatabase = instance(mockedWordDatabase);
 
-      let wordGame: IWordGame = new WordGame(wordDatabase, {
+      let wordGame: IWordGame = new WordGame(wordDatabase, englishWordDatabase, {
         minOccurences: minOccurences,
         maxOccurences: maxOccurences,
         guessAsSession: false,
         maxAttempts: -1,
+        language: "fra"
       });
 
       let sequence = wordGame.getNewSequence();
@@ -100,12 +106,14 @@ describe('WordGame', () => {
       when(mockedWordDatabase.wordExists(guess)).thenReturn(wordExist);
 
       let wordDatabase: IWordDatabase = instance(mockedWordDatabase);
+      let englishWordDatabase: IWordDatabase = instance(mockedWordDatabase);
 
-      let wordGame: IWordGame = new WordGame(wordDatabase, {
+      let wordGame: IWordGame = new WordGame(wordDatabase, englishWordDatabase, {
         minOccurences: minOccurences,
         maxOccurences: maxOccurences,
         guessAsSession: false,
         maxAttempts: -1,
+        language: "fra"
       });
 
       let sequence = wordGame.getNewSequence();
@@ -130,12 +138,14 @@ describe('WordGame', () => {
       when(mockedWordDatabase.wordExists(guess)).thenReturn(wordExist);
 
       let wordDatabase: IWordDatabase = instance(mockedWordDatabase);
+      let englishWordDatabase: IWordDatabase = instance(mockedWordDatabase);
 
-      let wordGame: IWordGame = new WordGame(wordDatabase, {
+      let wordGame: IWordGame = new WordGame(wordDatabase, englishWordDatabase, {
         minOccurences: minOccurences,
         maxOccurences: maxOccurences,
         guessAsSession: false,
         maxAttempts: -1,
+        language: "fra"
       });
 
       let sequence = wordGame.getNewSequence();
@@ -160,12 +170,14 @@ describe('WordGame', () => {
       when(mockedWordDatabase.wordExists(guess)).thenReturn(wordExist);
 
       let wordDatabase: IWordDatabase = instance(mockedWordDatabase);
+      let englishWordDatabase: IWordDatabase = instance(mockedWordDatabase);
 
-      let wordGame: IWordGame = new WordGame(wordDatabase, {
+      let wordGame: IWordGame = new WordGame(wordDatabase, englishWordDatabase, {
         minOccurences: minOccurences,
         maxOccurences: maxOccurences,
         guessAsSession: false,
         maxAttempts: -1,
+        language: "fra"
       });
 
       let sequence = wordGame.getNewSequence();
@@ -190,12 +202,14 @@ describe('WordGame', () => {
       when(mockedWordDatabase.wordExists(guess)).thenReturn(wordExist);
 
       let wordDatabase: IWordDatabase = instance(mockedWordDatabase);
+      let englishWordDatabase: IWordDatabase = instance(mockedWordDatabase);
 
-      let wordGame: IWordGame = new WordGame(wordDatabase, {
+      let wordGame: IWordGame = new WordGame(wordDatabase, englishWordDatabase, {
         minOccurences: minOccurences,
         maxOccurences: maxOccurences,
         guessAsSession: true,
         maxAttempts: -1,
+        language: "fra"
       });
 
       let sequence = wordGame.getNewSequence();
@@ -205,7 +219,7 @@ describe('WordGame', () => {
 
       // then
       expect(wordGame.isGuessing).toBe(false);
-      expect(wordGame.currentSequence).toBe('');
+      expect(wordGame.currentSequence.stringSequence).toBe('');
       expect(wordGame.attempts).toBe(0);
     });
 
@@ -219,12 +233,14 @@ describe('WordGame', () => {
       when(mockedWordDatabase.getSequence(minOccurences, maxOccurences)).thenReturn(expectedSequence);
 
       let wordDatabase: IWordDatabase = instance(mockedWordDatabase);
+      let englishWordDatabase: IWordDatabase = instance(mockedWordDatabase);
 
-      let wordGame: IWordGame = new WordGame(wordDatabase, {
+      let wordGame: IWordGame = new WordGame(wordDatabase, englishWordDatabase, {
         minOccurences: minOccurences,
         maxOccurences: maxOccurences,
         guessAsSession: false,
         maxAttempts: -1,
+        language: "fra"
       });
 
       let sequence = wordGame.getNewSequence();
@@ -250,12 +266,14 @@ describe('WordGame', () => {
       when(mockedWordDatabase.getWord(expectedSequence)).thenReturn(expectedExample);
 
       let wordDatabase: IWordDatabase = instance(mockedWordDatabase);
+      let englishWordDatabase: IWordDatabase = instance(mockedWordDatabase);
 
-      let wordGame = new WordGame(wordDatabase, {
+      let wordGame = new WordGame(wordDatabase, englishWordDatabase, {
         minOccurences: minOccurences,
         maxOccurences: maxOccurences,
         guessAsSession: false,
         maxAttempts: -1,
+        language: "fra"
       });
 
       let sequence = wordGame.getNewSequence();
@@ -279,12 +297,14 @@ describe('WordGame', () => {
       when(mockedWordDatabase.getWord(expectedSequence)).thenReturn(expectedExample);
 
       let wordDatabase: IWordDatabase = instance(mockedWordDatabase);
+      let englishWordDatabase: IWordDatabase = instance(mockedWordDatabase);
 
-      let wordGame = new WordGame(wordDatabase, {
+      let wordGame = new WordGame(wordDatabase, englishWordDatabase, {
         minOccurences: minOccurences,
         maxOccurences: maxOccurences,
         guessAsSession: false,
         maxAttempts: -1,
+        language: "fra"
       });
 
       // let sequence = wordGame.getNewSequence();
@@ -309,12 +329,14 @@ describe('WordGame', () => {
       when(mockedWordDatabase.wordExists(expectedWord)).thenReturn(false);
 
       let wordDatabase: IWordDatabase = instance(mockedWordDatabase);
+      let englishWordDatabase: IWordDatabase = instance(mockedWordDatabase);
 
-      let wordGame = new WordGame(wordDatabase, {
+      let wordGame = new WordGame(wordDatabase, englishWordDatabase, {
         minOccurences: minOccurences,
         maxOccurences: maxOccurences,
         guessAsSession: false,
         maxAttempts: maxAttempts,
+        language: "fra"
       });
 
       let sequence = wordGame.getNewSequence();
@@ -339,12 +361,14 @@ describe('WordGame', () => {
       when(mockedWordDatabase.wordExists(expectedWord)).thenReturn(false);
 
       let wordDatabase: IWordDatabase = instance(mockedWordDatabase);
+      let englishWordDatabase: IWordDatabase = instance(mockedWordDatabase);
 
-      let wordGame = new WordGame(wordDatabase, {
+      let wordGame = new WordGame(wordDatabase, englishWordDatabase, {
         minOccurences: minOccurences,
         maxOccurences: maxOccurences,
         guessAsSession: false,
         maxAttempts: maxAttempts,
+        language: "fra"
       });
 
       let sequence = wordGame.getNewSequence();
@@ -370,12 +394,14 @@ describe('WordGame', () => {
       when(mockedWordDatabase.wordExists(expectedWord)).thenReturn(false);
 
       let wordDatabase: IWordDatabase = instance(mockedWordDatabase);
+      let englishWordDatabase: IWordDatabase = instance(mockedWordDatabase);
 
-      let wordGame = new WordGame(wordDatabase, {
+      let wordGame = new WordGame(wordDatabase, englishWordDatabase, {
         minOccurences: minOccurences,
         maxOccurences: maxOccurences,
         guessAsSession: false,
         maxAttempts: maxAttempts,
+        language: "fra"
       });
 
       let sequence = wordGame.getNewSequence();
@@ -400,12 +426,14 @@ describe('WordGame', () => {
       when(mockedWordDatabase.wordExists(expectedWord)).thenReturn(false);
 
       let wordDatabase: IWordDatabase = instance(mockedWordDatabase);
+      let englishWordDatabase: IWordDatabase = instance(mockedWordDatabase);
 
-      let wordGame = new WordGame(wordDatabase, {
+      let wordGame = new WordGame(wordDatabase, englishWordDatabase, {
         minOccurences: minOccurences,
         maxOccurences: maxOccurences,
         guessAsSession: false,
         maxAttempts: maxAttempts,
+        language: "fra"
       });
 
       let sequence = wordGame.getNewSequence();
@@ -434,12 +462,14 @@ describe('WordGame', () => {
       when(mockedWordDatabase.wordExists(expectedWord)).thenReturn(false);
 
       let wordDatabase: IWordDatabase = instance(mockedWordDatabase);
+      let englishWordDatabase: IWordDatabase = instance(mockedWordDatabase);
 
-      let wordGame = new WordGame(wordDatabase, {
+      let wordGame = new WordGame(wordDatabase, englishWordDatabase, {
         minOccurences: minOccurences,
         maxOccurences: maxOccurences,
         guessAsSession: false,
         maxAttempts: maxAttempts,
+        language: "fra"
       });
 
       let sequence = wordGame.getNewSequence();
@@ -466,12 +496,14 @@ describe('WordGame', () => {
       when(mockedWordDatabase.wordExists(expectedWord)).thenReturn(false);
 
       let wordDatabase: IWordDatabase = instance(mockedWordDatabase);
+      let englishWordDatabase: IWordDatabase = instance(mockedWordDatabase);
 
-      let wordGame = new WordGame(wordDatabase, {
+      let wordGame = new WordGame(wordDatabase, englishWordDatabase, {
         minOccurences: minOccurences,
         maxOccurences: maxOccurences,
         guessAsSession: false,
         maxAttempts: maxAttempts,
+        language: "fra"
       });
 
       let sequence = wordGame.getNewSequence();
@@ -482,7 +514,7 @@ describe('WordGame', () => {
       wordGame.reset();
 
       // then
-      expect(wordGame.currentSequence).toBe('');
+      expect(wordGame.currentSequence.stringSequence).toBe('');
       expect(wordGame.isGuessing).toBe(false);
       expect(wordGame.remainingAttempts()).toBe(2);
     });
